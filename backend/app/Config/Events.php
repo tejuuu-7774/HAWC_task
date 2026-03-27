@@ -53,3 +53,13 @@ Events::on('pre_system', static function (): void {
         }
     }
 });
+
+Events::on('pre_system', function () {
+    header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    header('Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE');
+
+    if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+        exit(0);
+    }
+});

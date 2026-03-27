@@ -87,4 +87,16 @@ class AuthController extends BaseController
             'user' => $user
         ]);
     }
+
+    public function getUsers()
+    {
+        $userModel = new \App\Models\UserModel();
+        return $this->response->setJSON($userModel->findAll());
+    }
+
+    public function getTeachers()
+    {
+        $teacherModel = new \App\Models\TeacherModel();
+        return $this->response->setJSON($teacherModel->findAll());
+    }
 }

@@ -81,6 +81,7 @@ class Filters extends BaseFilters
             // 'honeypot',
             // 'secureheaders',
         ],
+        'cors',
     ];
 
     /**
